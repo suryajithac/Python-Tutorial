@@ -1,0 +1,12 @@
+import pandas as pd
+data = pd.read_csv("weather.csv")
+print("First 10 rows of weather data:")
+print(data.head(10))
+print("Maximum temperature:", data.temperature.max())
+print("Minimum temperature:", data.temperature.min())
+print("Places with temperature below 28°C:")
+print(data[data.temperature < 28]["place"])
+print("Places with Cloudy weather:")
+print(data[data.weather == "Cloudy"])
+print("Frequency of each weather type:")
+print(data.weather.value_counts())

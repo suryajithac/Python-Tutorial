@@ -1,0 +1,12 @@
+import pandas as pd
+data = pd.read_csv("employee.csv")
+print("First 7 records:")
+print(data.head(7))
+print("All names in alphabetical order:")
+print(data.name.sort_values())
+print("Employee with highest salary:")
+print(data[data.salary == data.salary.max()].name)
+print("List of male employees:")
+print(data[data.gender == "male"].name)
+print("Teams in the company:")
+print(data.team.unique())

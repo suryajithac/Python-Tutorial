@@ -1,0 +1,11 @@
+import pandas as pd
+data = pd.read_csv("student.csv")
+print("Average CGPA:", data.CGPA.mean())
+print("Students with CGPA > 9:")
+print(data[data.CGPA > 9])
+print("CSE students with CGPA > 9:")
+print(data[(data.CGPA > 9) & (data.Branch == "CSE")])
+print("Student with highest CGPA:")
+print(data[data.CGPA == data.CGPA.max()])
+print("Average CGPA per branch:")
+print(data.groupby("Branch")["CGPA"].mean())
